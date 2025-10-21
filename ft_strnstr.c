@@ -6,75 +6,61 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:18:45 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/20 21:05:15 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:22:08 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
-#include <bsd/string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <bsd/string.h>
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	i = 0;
 	j = 0;
+	i = 0;
 	if (little[i] == '\0')
-		return ((char*)big);
-	while (j < len)
+		return ((char *)big);
+	while (j < len && big[j] != '\0')
 	{
-		while (big[j] != '\0')
-		{
-			if (big[j] == little[i])
-				return ((char *) &big[j]);
+		i = 0;
+		while (little[i] && (j + i) < len && big[i + j] == little[i])
 			i++;
-			j++;
-		}
+		if (little[i] == '\0')
+			return ((char *) &big[j]);
+		j++;
 	}
 	return (NULL);
 }
+/*
+int main()
+{
+    const char *big = "Hello, this is a test string";
+    const char *little = "test";
+    size_t len = 20;
 
-int main() {
-    const char *haystack = "Hello, world!";
-    const char *needle = "world";
+    char *result_std = strnstr(big, little, len);
+    char *result_ft = ft_strnstr(big, little, len);
 
-    // Test case 1: Normal match
-    const char *result = strnstr(haystack, needle, 13);
-    if (result) {
-        printf("Test 1: Found \"%s\" in \"%s\": %s\n", needle, haystack, result);
-    } else {
-        printf("Test 1: \"%s\" not found in \"%s\"\n", needle, haystack);
-    }
+    printf("Test 1\n");
+    printf("Original strnstr result: %s\n", result_std);
+    printf("Your ft_strnstr result: %s\n\n", result_ft);
 
-    // Test case 2: Not found because of length restriction
-    result = strnstr(haystack, needle, 8);
-    if (result) {
-        printf("Test 2: Found \"%s\" in \"%s\": %s\n", needle, haystack, result);
-    } else {
-        printf("Test 2: \"%s\" not found in first 8 chars of \"%s\"\n", needle, haystack);
-    }
+    const char *big2 = "Hello, this is a test string";
+    const char *little2 = "Hello,";
+    size_t len2 = 6;
 
-    // Test case 3: Empty needle (should return haystack)
-    result = strnstr(haystack, "", 5);
-    if (result) {
-        printf("Test 3: Empty needle returns: %s\n", result);
-    }
+    char *result_std2 = strnstr(big2, little2, len2);
+    char *result_ft2 = ft_strnstr(big2, little2, len2);
 
-    // Test case 4: Needle longer than haystack
-    result = strnstr("short", "thisislong", 10);
-    if (result) {
-        printf("Test 4: Unexpected match: %s\n", result);
-    } else {
-        printf("Test 4: No match as needle is longer than haystack\n");
-    }
-
-    // Test case 5: Match at beginning
-    result = strnstr("abcdef", "abc", 3);
-    if (result) {
-        printf("Test 5: Found \"%s\" in \"%s\": %s\n", "abc", "abcdef", result);
-    }
+    printf("Test 2\n");
+    printf("Original strnstr result: %s\n", result_std2);
+    printf("Your ft_strnstr result: %s\n", result_ft2);
 
     return 0;
 }
+*/

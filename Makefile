@@ -20,28 +20,25 @@ AR = ar rcs
 RM = rm -f
 
 # Source files
-SRCS = ft_isalpha.c, ft_isdigit.c, ft_isalnum.c, ft_isascii.c, ft_isprint.c, ft_strlen.c
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_strnstr.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
-
-# Header files
-INCS = -I$(INCS_DIR)
 
 # Rules
 all: $(NAME)
 
 $(NAME): $(OBJS)
-    $(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-    $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
