@@ -20,7 +20,7 @@ AR = ar rcs
 RM = rm -f
 
 # Source files
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_strnstr.c
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_strnstr.c ft_strdup.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)
