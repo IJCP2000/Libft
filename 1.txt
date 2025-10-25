@@ -1,0 +1,19 @@
+"      o      gabriel \0" , " "
+
+**str_ver[word_count] = '\0';
+
+**str_vert
+0 
+1 
+2 0
+
+
+
+printf("str_ver[1]: >%s<\n",*str_vert[1])
+str_ver[1]: >o      
+<
+str_ver[1]: >%s
+<
+str_ver[1]: >%s
+<
+str_ver[1]: >%s<
