@@ -6,46 +6,39 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 17:50:10 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/25 15:05:40 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/25 15:32:13 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_trim(const char *s, char c);
+static int	ft_in_set(const char *s, char c);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	l;
+	size_t	start;
+	size_t	end;
+	size_t	len;
 	char	*trimmed;
 
-	j = ft_strlen(s1) - 1;
-	i = 0;
-	l = 0;
 	if (!s1 || !set)
 		return (NULL);
-	while (ft_trim(set, s1[i]))
-		i++;
-	while (ft_trim(set, s1[j]))
-		j--;
-	if (i > j)
-		return (ft_strdup(""));
-	trimmed = malloc ((j - i + 2) * sizeof(char));
+	start = 0;
+	end = strlen(s1);
+	while (s1[start] && ft_in_set(set, s1[start]))
+		start++;
+	while (end > start && ft_in_set(set, s1[end - 1]))
+		end--;
+	len = end - start;
+	trimmed = malloc (len + 1);
 	if (!trimmed)
 		return (NULL);
-	while (i <= j)
-	{
-		trimmed[l] = s1[i];
-		i++;
-		l++;
-	}
-	trimmed[l] = '\0';
+	ft_memcpy(trimmed, s1 + start, len);
+	trimmed[len] = '\0';
 	return (trimmed);
 }
 
-static int	ft_trim(const char *s, char c)
+static int	ft_in_set(const char *s, char c)
 {
 	unsigned int	i;
 
