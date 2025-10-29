@@ -6,7 +6,7 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:34:15 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/20 16:32:25 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 19:12:38 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,8 +26,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((char *) &copy_s[i]);
 		i++;
 	}
-	if (copy_s[i] == cc)
-		return ((char *) &copy_s[i]);
 	return (NULL);
 }
 /*

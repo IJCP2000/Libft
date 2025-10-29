@@ -6,26 +6,26 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 18:22:05 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/17 18:59:51 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:47:43 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	i;
-	char	cc;
+	char			cc;
 
 	i = 0;
 	cc = (char) c;
 	while (s[i] != '\0')
 	{
 		if ((s[i] == cc))
-			return((char *)&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	if ((s[i] == cc))
-		return((char *) &s[i]);
+		return ((char *) &s[i]);
 	return (NULL);
 }
 /*

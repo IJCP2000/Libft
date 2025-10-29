@@ -6,14 +6,14 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:50:31 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/21 19:34:35 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 20:05:30 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	box;

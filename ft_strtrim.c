@@ -6,7 +6,7 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 17:50:10 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/25 15:32:13 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 20:17:23 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	end = strlen(s1);
+	end = ft_strlen(s1);
 	while (s1[start] && ft_in_set(set, s1[start]))
 		start++;
 	while (end > start && ft_in_set(set, s1[end - 1]))

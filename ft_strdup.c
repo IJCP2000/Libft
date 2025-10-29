@@ -6,7 +6,7 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:57:50 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/23 15:41:49 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:45:19 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,6 +26,7 @@ char	*ft_strdup(const char *s)
 		s2[i] = s[i];
 		i++;
 	}
+	s2[i] = '\0';
 	return (s2);
 }
 /*

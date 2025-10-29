@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 18:28:36 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/28 15:33:35 by ide-carv         ###   ########.fr       */
+/*   Created: 2025/10/28 23:22:30 by ide-carv          #+#    #+#             */
+/*   Updated: 2025/10/28 23:30:05 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putstr_fd(char *str, int fd)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
 }
-/*
-int	main(void)
-{
-	printf("isalpha(5) = %d\n", ft_isalnum(5));
-	printf("isalpha(a) = %d\n", ft_isalnum('a'));
-	printf("isalpha(+) = %d\n", ft_isalnum('+'));
-	return(0);
-}
-*/

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 18:28:36 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/28 15:33:35 by ide-carv         ###   ########.fr       */
+/*   Created: 2025/10/28 23:42:58 by ide-carv          #+#    #+#             */
+/*   Updated: 2025/10/28 23:50:05 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	else
-		return (0);
+	char	c;
+
+	if (n == -2147483648)
+	{
+		write(fd, "-2", 2);
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	c = (n % 10) + '0';
+	write (fd, &c, 1);
 }
-/*
-int	main(void)
-{
-	printf("isalpha(5) = %d\n", ft_isalnum(5));
-	printf("isalpha(a) = %d\n", ft_isalnum('a'));
-	printf("isalpha(+) = %d\n", ft_isalnum('+'));
-	return(0);
-}
-*/

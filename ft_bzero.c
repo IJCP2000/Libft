@@ -6,20 +6,19 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:16:00 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/15 18:10:06 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:48:28 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char unsigned	*str;
-	size_t	i;
+	size_t			i;
 
 	str = (char unsigned *) s;
-
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		str[i] = 0;
 		i++;

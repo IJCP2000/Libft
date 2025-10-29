@@ -6,11 +6,12 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 20:02:18 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/16 21:58:28 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:42:13 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <string.h>
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclgt;
@@ -20,15 +21,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	srclgt = 0;
 	dstlgt = 0;
-	while(dst[dstlgt] != '\0' && dstlgt < dstsize)
+	while (dst[dstlgt] != '\0' && dstlgt < dstsize)
 		dstlgt++;
-	while(src[srclgt] != '\0')
+	while (src[srclgt] != '\0')
 		srclgt++;
-	if(dstlgt == dstsize)
-		return(dstsize + srclgt);
-	while(srclgt > i && (dstlgt + i + 1) < dstsize)
+	if (dstlgt == dstsize)
+		return (dstsize + srclgt);
+	while (srclgt > i && (dstlgt + i + 1) < dstsize)
 	{
-		dst[dstlgt + i]= src[i];
+		dst[dstlgt + i] = src[i];
 		i++;
 	}
 	dst[dstlgt + i] = '\0';

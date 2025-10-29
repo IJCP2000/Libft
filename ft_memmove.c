@@ -6,22 +6,20 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 19:48:54 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/16 18:46:17 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 19:27:39 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
 	unsigned char		*og;
 	unsigned char		*copy;
 
 	og = (unsigned char *) src;
 	copy = (unsigned char *) dest;
-	i = 0;
-	if (src == NULL || dest == NULL)
-		return (NULL);
+	if (og == copy || n == 0)
+		return (dest);
 	if (copy <= og)
 		while (n--)
 			*copy++ = *og++;
@@ -33,7 +31,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			copy[n] = og[n];
 		}
 	}
-	return (copy);
+	return (dest);
 }
 /*
 int main()

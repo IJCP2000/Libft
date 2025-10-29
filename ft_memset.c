@@ -6,25 +6,24 @@
 /*   By: ide-carv <ide-carv@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:50:42 by ide-carv          #+#    #+#             */
-/*   Updated: 2025/10/15 16:57:57 by ide-carv         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:40:10 by ide-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	size_t	i;
-	char unsigned *temp;
+	size_t			i;
+	char unsigned	*temp;
 
 	temp = (char unsigned *) str;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		temp[i] = (char unsigned) c;
 		i++;
 	}
-
-	return(temp);
+	return (temp);
 }
 /*
 int main(void)
